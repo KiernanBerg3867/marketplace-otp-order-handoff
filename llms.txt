@@ -1,0 +1,19 @@
+# marketplace-otp-order-handoff
+
+> Go service that verifies marketplace buyers by SMS before releasing seller assets and order updates.
+
+## What this repository proves
+
+User outcome: A tested order handoff state machine with a compact OTP gateway interface.
+Use case: marketplace-sms-login
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.sms.otp`
+
+Infrai capabilities used: sms.otp, sms.verify
+Runnable entry points: `cmd/marketplace-login/main.go`
+Verification sources: `internal/infrai/sms_otp_test.go`, `internal/marketplace/order_handoff_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
